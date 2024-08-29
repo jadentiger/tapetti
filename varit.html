@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Comparison Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px 0;
+        }
+        .color-box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #fff;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Color Comparison Tool</h1>
+
+    <div class="container">
+        <div class="color-box" id="color1">Color 1</div>
+        <div class="color-box" id="color2">Color 2</div>
+    </div>
+
+    <div>
+        <label for="colorSelect1">Choose first color:</label>
+        <select id="colorSelect1">
+            <option value="#FF0000">Red</option>
+            <option value="#00FF00">Green</option>
+            <option value="#0000FF">Blue</option>
+            <option value="#FFFF00">Yellow</option>
+            <option value="#FF00FF">Magenta</option>
+            <option value="#00FFFF">Cyan</option>
+            <option value="#800000">Maroon</option>
+            <option value="#808000">Olive</option>
+            <option value="#800080">Purple</option>
+            <option value="#808080">Gray</option>
+            <option value="#000000">Black</option>
+            <option value="#FFFFFF">White</option>
+            <option value="#FFA500">Orange</option>
+            <option value="#A52A2A">Brown</option>
+            <option value="#FFC0CB">Pink</option>
+            <option value="#ADD8E6">Light Blue</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="colorSelect2">Choose second color:</label>
+        <select id="colorSelect2">
+            <option value="#FF0000">Red</option>
+            <option value="#00FF00">Green</option>
+            <option value="#0000FF">Blue</option>
+            <option value="#FFFF00">Yellow</option>
+            <option value="#FF00FF">Magenta</option>
+            <option value="#00FFFF">Cyan</option>
+            <option value="#800000">Maroon</option>
+            <option value="#808000">Olive</option>
+            <option value="#800080">Purple</option>
+            <option value="#808080">Gray</option>
+            <option value="#000000">Black</option>
+            <option value="#FFFFFF">White</option>
+            <option value="#FFA500">Orange</option>
+            <option value="#A52A2A">Brown</option>
+            <option value="#FFC0CB">Pink</option>
+            <option value="#ADD8E6">Light Blue</option>
+        </select>
+    </div>
+
+    <script>
+        const colorBox1 = document.getElementById('color1');
+        const colorBox2 = document.getElementById('color2');
+        const colorSelect1 = document.getElementById('colorSelect1');
+        const colorSelect2 = document.getElementById('colorSelect2');
+
+        function updateColors() {
+            const color1 = colorSelect1.value;
+            const color2 = colorSelect2.value;
+
+            colorBox1.style.backgroundColor = color1;
+            colorBox1.textContent = colorSelect1.options[colorSelect1.selectedIndex].text;
+
+            colorBox2.style.backgroundColor = color2;
+            colorBox2.textContent = colorSelect2.options[colorSelect2.selectedIndex].text;
+        }
+
+        colorSelect1.addEventListener('change', updateColors);
+        colorSelect2.addEventListener('change', updateColors);
+
+        updateColors();
+    </script>
+
+</body>
+</html>

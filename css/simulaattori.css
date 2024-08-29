@@ -1,0 +1,198 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #212529;
+}
+
+.header {
+    position: relative;
+    height: 300px;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+.header h1 {
+    position: relative;
+    font-size: 40px;
+    margin-top: 90px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+}
+
+.header h2 {
+    position: relative;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.navbar {
+    background-color: #1f2124;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.nav-link {
+    flex-shrink: 1;
+    font-size: 1rem;
+    margin: 0; /* Reset margin to avoid extra space */
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 10px 15px; /* Ensure padding is consistent */
+    display: inline-block; /* Ensure it only takes up the space needed */
+}
+
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #a09b9b;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+    footer {
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: #1f2124;
+color: white;
+text-align: center;
+padding-top: 20px;
+padding-bottom: 20px;
+opacity: 0;
+transform: translateY(100%);
+transition: opacity 0.5s ease, transform 0.5s ease;
+position: fixed;
+}
+
+/* Footer adjustments for smaller screens */
+@media (max-width: 768px) {
+footer {
+padding-top: 15px;
+padding-bottom: 15px;
+font-size: 14px; /* Smaller font size */
+}
+}
+
+@media (max-width: 576px) {
+footer {
+padding-top: 10px;
+padding-bottom: 10px;
+font-size: 12px; /* Even smaller font size */
+}
+}
+
+
+footer.visible {
+    opacity: 1; /* Make it visible */
+    transform: translateY(0); /* Move it into view */
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+    color: white;
+    padding-top: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+p {
+    font-size: 15px;
+    color: white;
+    padding-bottom: 30px;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 5px solid #ffffff;
+}
+
+.content {
+    padding-bottom: 50px; /* adjust as needed to ensure content doesn't overlap footer */
+}
+
+.color-comparison-tool {
+    background-color: #212529;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.color-box {
+    width: 50%; /* Each box takes half of the parent width */
+    height: 200px; /* Set a fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content */
+    font-size: 18px;
+    color: #fff;
+    padding: 1rem;
+    box-sizing: border-box; /* Ensure padding doesn't affect the box size */
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+}
+
+label {
+    color: #ffffff;
+}
+
+.parent {
+    margin: 1rem;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+@media (max-width: 768px) {
+    .nav-link {
+        font-size: 0.8rem;
+        padding: 5px 10px; /* Adjust padding for smaller screens */
+        margin: 0; /* Ensure no extra margin */
+    }
+
+    .color-box {
+        width: 100%; /* Full width on smaller screens */
+        height: 150px; /* Smaller height on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-link {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-link {
+        font-size: 20px;
+        padding: 3px 6px;
+        margin: 0;
+    }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kotkantien maalaus- ja tapetointi</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/simulaattori.css">
+    <link rel="icon" href="img/favicon.png">
+</head>
+<body>
+
+<div class="header">
+    <video autoplay muted loop>
+        <source src="5799479-hd_1920_1080_25fps.mp4" type="video/mp4">
+    </video>
+    <h1>Kotkantien maalaus- ja tapetointi</h1>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">Etusivu</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="palvelut.html">Palvelut</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="yhteystiedot.html">Yhteystiedot</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="simulaattori.html">Simulaattori</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="galleria.html">Galleria</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container content">
+    <div class="color-comparison-tool">
+        <h2>Värivertailutyökalu</h2>
+        <p>Kokeile erilaisia ​​väriyhdistelmiä makusi mukaan!</p>
+
+        <div class="parent">
+            <div class="color-box" id="color1">Color 1</div>
+            <div class="color-box" id="color2">Color 2</div>
+        </div>
+
+        <div>
+            <label for="colorSelect1">Väri 1</label>
+            <select id="colorSelect1">
+                <option value="#615550">Brown Granite</option>
+                <option value="#DD4132">Fiesta</option>
+                <option value="#9E1030">Jester Red</option>
+                <option value="#FE840E">Turmeric</option>
+                <option value="#FF6F61">Living Coral</option>
+                <option value="#C62168">Pink Peacock</option>
+                <option value="#8D9440">Pepper Stem</option>
+                <option value="#FFD662">Aspen Gold</option>
+                <option value="#00539C">Princess Blue</option>
+                <option value="#755139">Toffee</option>
+                <option value="#D69C2F">Mango Mojito</option>
+                <option value="#616247">Terrarium Moss</option>
+                <option value="#E8B5CE">Sweet Lilac</option>
+                <option value="#D2C29D">Soybean</option>
+                <option value="#343148">Eclipse</option>
+                <option value="#F0EAD6">Sweet Corn</option>
+                <option value="#615550">Brown Granite</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="colorSelect2">Väri 2</label>
+            <select id="colorSelect2">
+                <option value="#615550">Brown Granite</option>
+                <option value="#9E1030">Jester Red</option>
+                <option value="#FE840E">Turmeric</option>
+                <option value="#FF6F61">Living Coral</option>
+                <option value="#C62168">Pink Peacock</option>
+                <option value="#8D9440">Pepper Stem</option>
+                <option value="#FFD662">Aspen Gold</option>
+                <option value="#00539C">Princess Blue</option>
+                <option value="#755139">Toffee</option>
+                <option value="#D69C2F">Mango Mojito</option>
+                <option value="#616247">Terrarium Moss</option>
+                <option value="#E8B5CE">Sweet Lilac</option>
+                <option value="#D2C29D">Soybean</option>
+                <option value="#343148">Eclipse</option>
+                <option value="#F0EAD6">Sweet Corn</option>
+                <option value="#DD4132">Fiesta</option>
+            </select>
+        </div>
+    </div>
+
+</div>
+<img src="" alt="">
+<footer>
+    © Kotkantien maalaus- ja tapetointi ┃ Kotkantie 3, 90100 Oulu ┃ Puhelin 044 999 888 99 ┃ Sähköposti info@kotkantienmaalaus.fi
+</footer>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const footer = document.querySelector('footer');
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 0) {
+            footer.classList.add('visible');
+        } else {
+            footer.classList.remove('visible');
+        }
+    });
+
+    const colorBox1 = document.getElementById('color1');
+    const colorBox2 = document.getElementById('color2');
+    const colorSelect1 = document.getElementById('colorSelect1');
+    const colorSelect2 = document.getElementById('colorSelect2');
+
+    function updateColors() {
+        const color1 = colorSelect1.value;
+        const color2 = colorSelect2.value;
+
+        colorBox1.style.backgroundColor = color1;
+        colorBox1.textContent = colorSelect1.options[colorSelect1.selectedIndex].text;
+
+        colorBox2.style.backgroundColor = color2;
+        colorBox2.textContent = colorSelect2.options[colorSelect2.selectedIndex].text;
+    }
+
+    colorSelect1.addEventListener('change', updateColors);
+    colorSelect2.addEventListener('change', updateColors);
+
+    updateColors();
+</script>
+
+</body>
+</html>
